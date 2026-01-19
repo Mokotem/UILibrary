@@ -3,6 +3,7 @@ package tonpere.tamerecestjava;
 import com.badlogic.gdx.math.Rectangle;
 
 import java.util.List;
+import java.util.Set;
 
 public class UI
 {
@@ -12,7 +13,6 @@ public class UI
     }
     private static UI Screen;
 
-    protected boolean visible;
 
     public void setVisible(boolean value)
     {
@@ -25,15 +25,25 @@ public class UI
     }
 
     protected UI parent;
-    protected List<UI> childs;
+    protected Set<UI> childs;
+
+    public void setParent(UI parent)
+    {
+        this.parent = parent;
+        this.layer = parent.layer + 0.01f;
+        parent.childs.add(this);
+    }
 
     protected Rectangle rect, margin, padding;
     protected float layer;
     protected Bounds position;
 
+    protected boolean visible;
+
     protected UI()
     {
         rect = new Rectangle(0, 0, 32, 32);
+        layer = 0;
         parent = Screen;
     }
 
@@ -80,6 +90,36 @@ public class UI
         setSize(extend);
         rect.width += addWidth;
         rect.height += addHeight;
+    }
+
+    public void setMargin(int up, int down, int left, int right)
+    {
+        margin = new Rectangle(left, up, right, down);
+    }
+
+    public void setMargin(int horizontal, int vertical)
+    {
+        margin = new Rectangle(horizontal, vertical, horizontal, vertical);
+    }
+
+    public void setMargin(int value)
+    {
+        margin = new Rectangle(value, value, value, value);
+    }
+
+    public void setPadding(int up, int down, int left, int right)
+    {
+        padding = new Rectangle(left, up, right, down);
+    }
+
+    public void setPadding(int horizontal, int vertical)
+    {
+        padding = new Rectangle(horizontal, vertical, horizontal, vertical);
+    }
+
+    public void setPadding(int value)
+    {
+        padding = new Rectangle(value, value, value, value);
     }
 
 

@@ -23,20 +23,6 @@ public class Image extends UI
         this.color = color;
     }
 
-    public Image(int width, int height, Bounds position, Texture tex)
-    {
-        super(width, height, position);
-        this.img = tex;
-        this.color = Color.WHITE;
-    }
-
-    public Image(int width, int height, Bounds position, Texture tex, Color color)
-    {
-        super(width, height, position);
-        this.img = tex;
-        this.color = color;
-    }
-
     public void render(SpriteBatch batch)
     {
         if (visible)
