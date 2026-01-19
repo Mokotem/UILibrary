@@ -1,12 +1,20 @@
 package tonpere.tamerecestjava;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /** First screen of the application. Displayed after the application is created. */
 public class FirstScreen implements Screen {
+
+    Image test;
+    SpriteBatch batch;
+
     @Override
-    public void show() {
-        // Prepare your screen here.
+    public void show()
+    {
+        batch = new SpriteBatch();
+        test = new Image(64, 64, new Texture(2, 2, null));
     }
 
     private void Update()
@@ -17,6 +25,10 @@ public class FirstScreen implements Screen {
     @Override
     public void render(float delta) {
         this.Update();
+
+        batch.begin();
+        test.render(batch);
+        batch.end();
     }
 
     @Override
