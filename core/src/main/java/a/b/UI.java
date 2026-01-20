@@ -1,8 +1,7 @@
-package tonpere.tamerecestjava;
+package a.b;
 
 import com.badlogic.gdx.math.Rectangle;
 
-import java.util.List;
 import java.util.Set;
 
 public class UI

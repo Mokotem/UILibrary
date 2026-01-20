@@ -1,4 +1,4 @@
-package tonpere.tamerecestjava;
+package a.b;
 
 public enum Extend
 {

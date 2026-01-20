@@ -1,4 +1,4 @@
-package tonpere.tamerecestjava;
+package a.b;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
